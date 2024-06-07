@@ -1,16 +1,16 @@
-package dio.spring_web_security_database;
+package dio.spring_web_security_database.config;
 
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.http.HttpMethod;
 import org.springframework.security.config.Customizer;
+import org.springframework.security.config.annotation.authentication.builders.AuthenticationManagerBuilder;
 import org.springframework.security.config.annotation.method.configuration.EnableMethodSecurity;
 import org.springframework.security.config.annotation.web.builders.HttpSecurity;
 import org.springframework.security.config.annotation.web.configuration.EnableWebSecurity;
 import org.springframework.security.config.annotation.web.configurers.AbstractHttpConfigurer;
-import org.springframework.security.core.userdetails.User;
-import org.springframework.security.core.userdetails.UserDetails;
-import org.springframework.security.provisioning.InMemoryUserDetailsManager;
+import org.springframework.security.crypto.password.NoOpPasswordEncoder;
 import org.springframework.security.web.SecurityFilterChain;
 
 
@@ -18,7 +18,7 @@ import org.springframework.security.web.SecurityFilterChain;
 @EnableWebSecurity
 @EnableMethodSecurity
 public class WebSecurityConfig {
-
+/*
     @Bean
     public InMemoryUserDetailsManager userDetailsService() {
         User.UserBuilder users = User.withDefaultPasswordEncoder();
@@ -34,6 +34,14 @@ public class WebSecurityConfig {
                 .build();
 
         return new InMemoryUserDetailsManager(user, admin);
+    }
+    */
+    @Autowired
+    private SecurityDatabaseService securityDatabaseService;
+    public void globalUserDetails(AuthenticationManagerBuilder auth) throws Exception{
+        auth
+                .userDetailsService(securityDatabaseService)
+                .passwordEncoder(NoOpPasswordEncoder.getInstance());
     }
 
     @Bean

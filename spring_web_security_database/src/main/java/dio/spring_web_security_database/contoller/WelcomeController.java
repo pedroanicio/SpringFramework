@@ -1,4 +1,4 @@
-package dio.spring_web_security_database;
+package dio.spring_web_security_database.contoller;
 
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RestController;
