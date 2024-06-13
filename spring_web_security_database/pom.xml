@@ -54,6 +54,7 @@
 			<scope>test</scope>
 		</dependency>
 
+
 		<!-- SWAGGER DOCUMENTACAO -->
 		<dependency>
 			<groupId>org.springdoc</groupId>
