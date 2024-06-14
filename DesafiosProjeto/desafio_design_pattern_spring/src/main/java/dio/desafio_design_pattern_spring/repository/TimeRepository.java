@@ -5,4 +5,4 @@ import org.springframework.data.repository.CrudRepository;
 import org.springframework.stereotype.Repository;
 
 @Repository
-public interface TimeInterface extends CrudRepository<Time, Long> {}
+public interface TimeRepository extends CrudRepository<Time, Long> {}

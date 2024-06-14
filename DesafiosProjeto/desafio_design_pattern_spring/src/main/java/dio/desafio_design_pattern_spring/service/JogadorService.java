@@ -3,6 +3,8 @@ package dio.desafio_design_pattern_spring.service;
 import dio.desafio_design_pattern_spring.model.Jogador;
 import dio.desafio_design_pattern_spring.model.Time;
 
+import java.util.List;
+
 public interface JogadorService {
 
 
@@ -10,9 +12,9 @@ public interface JogadorService {
 
     Jogador buscarPorId(Long id);
 
-    Jogador buscarPorTime(Time time);
+    List<Jogador> buscarPorTime(Time time);
 
-    Jogador buscarPorPosicao(String posicao);
+    List <Jogador> buscarPorPosicao(String posicao);
 
     void inserir(Jogador jogador);
 
