@@ -31,15 +31,15 @@ public class JogadorServiceImpl implements JogadorService {
         return jogador.get();
     }
 
-    @Override
-    public List<Jogador> buscarPorTime(Time time) {
-        return jogadorRepository.findByTime(time);
-    }
+    //@Override
+    //public List<Jogador> buscarPorTime(Time time) {
+    //    return jogadorRepository.findByTime(time);
+    //}
 
-    @Override
-    public List<Jogador> buscarPorPosicao(String posicao) {
-        return null;
-    }
+    //@Override
+    //public List<Jogador> buscarPorPosicao(String posicao) {
+    //    return null;
+    //}
 
     @Override
     public void inserir(Jogador jogador) {

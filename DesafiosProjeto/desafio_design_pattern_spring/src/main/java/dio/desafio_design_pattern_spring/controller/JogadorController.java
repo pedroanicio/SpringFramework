@@ -20,24 +20,37 @@ public class JogadorController {
         return ResponseEntity.ok(jogadorService.buscarTodos());
     }
 
-    @GetMapping("/{id}")
+    @GetMapping("/id/{id}")
     public ResponseEntity<Jogador> buscarPorId(@PathVariable Long id){
         return ResponseEntity.ok(jogadorService.buscarPorId(id));
     }
-    @GetMapping("/{time}")
-    public ResponseEntity<List<Jogador>> buscarPorTime(@PathVariable Time time){
-        return ResponseEntity.ok(jogadorService.buscarPorTime(time));
-    }
+    //@GetMapping("/{}")
+    //public ResponseEntity<List<Jogador>> buscarPorTime(@PathVariable Time time){
+    //    return ResponseEntity.ok(jogadorService.buscarPorTime(time));
+    //}
     
-    @GetMapping("/{posicao}")
-    public ResponseEntity<List<Jogador>> buscarPorPosicao(@PathVariable String posicao){
-        return ResponseEntity.ok(jogadorService.buscarPorPosicao(posicao));
-    }
+    //@GetMapping("/{}")
+    //public ResponseEntity<List<Jogador>> buscarPorPosicao(@PathVariable String posicao){
+    //    return ResponseEntity.ok(jogadorService.buscarPorPosicao(posicao));
+    //}
     
     @PostMapping
+    public ResponseEntity<Jogador> inserir(@RequestBody Jogador jogador) {
+        jogadorService.inserir(jogador);
+        return ResponseEntity.ok(jogador);
+    }
 
-    @PutMapping
 
-    @DeleteMapping
+    @PutMapping("/{id}")
+    public ResponseEntity<Jogador> atualizar(@PathVariable Long id, @RequestBody Jogador jogador) {
+        jogadorService.atualizar(id, jogador);
+        return ResponseEntity.ok(jogador);
+    }
+
+    @DeleteMapping("/{id}")
+    public ResponseEntity<Void> deletar(@PathVariable Long id) {
+        jogadorService.deletar(id);
+        return ResponseEntity.ok().build();
+    }
     
 }

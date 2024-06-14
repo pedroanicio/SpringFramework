@@ -12,9 +12,9 @@ public interface JogadorService {
 
     Jogador buscarPorId(Long id);
 
-    List<Jogador> buscarPorTime(Time time);
+    //List<Jogador> buscarPorTime(Time time);
 
-    List <Jogador> buscarPorPosicao(String posicao);
+    //List <Jogador> buscarPorPosicao(String posicao);
 
     void inserir(Jogador jogador);
 
