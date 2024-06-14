@@ -1,0 +1,27 @@
+https://jsoneditoronline.org/
+
+{
+  "name": "Pedro",
+  "account": {
+    "number": "1234567-0",
+    "agency": "0000",
+    "balance": 1234.56,
+    "limit": 1000.00
+  },
+  "features": [
+    {
+      "icon": "URL",
+      "description": "Descricao da feature"
+    }
+  ],
+  "card": {
+    "number": "XXXX XXXX XXXX 0000",
+    "limit": 1000.00
+  },
+  "news": [
+    {
+      "icon": "URL",
+      "description": "Descricao da noticia"
+    }
+  ]
+}
