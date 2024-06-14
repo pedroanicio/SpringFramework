@@ -33,3 +33,5 @@ classDiagram
     User --> Account : has
     User --> Feature : has multiple
     User --> Card : has
+
+```
